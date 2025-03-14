@@ -1,0 +1,515 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            margin: 0 auto;
+        }
+
+
+        .service-card {
+            background: linear-gradient(145deg, #2b0f49, #1a0733);
+            border-radius: 20px;
+            padding: 30px;
+            width: 350px;
+            min-height: 450px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #B8B8B8;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .btn-custom {
+            border: 1px solid white !important;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+            text-decoration: none !important;
+        }
+
+        .btn-custom:hover {
+            opacity: 0.9;
+            color: white;
+        }
+
+
+
+
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color:  linear-gradient(145deg, #2b0f49, #1a0733) !important;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        
+      
+    </style>
+</head>
+
+<body>
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-12 text-right">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                        data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" id="carouselContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script>
+        const carouselData = [
+            [
+                {
+                    title: "UI/UX Design",
+                    description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card1.png"
+
+                },
+                {
+                    title: "Software Development",
+                    description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card2.png"
+
+                },
+                {
+                    title: "Business Consulting",
+                    description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card3.png"
+
+                }
+            ],
+            [
+                {
+                    title: "UI/UX Design",
+                    description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card1.png"
+
+                },
+                {
+                    title: "Software Development",
+                    description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card2.png"
+
+                },
+                {
+                    title: "Business Consulting",
+                    description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card3.png"
+
+                }
+            ]
+        ];
+
+        const carouselContent = document.getElementById("carouselContent");
+
+        carouselData.forEach((group, index) => {
+            const isActive = index === 0 ? "active" : "";
+            let carouselItem = `<div class="carousel-item ${isActive}">
+    <div class="row" style="gap: 10px; margin-left: 0px; margin-right: 0px; margin-top: 10px;">
+`;
+
+            group.forEach(item => {
+                carouselItem += `
+                   <div class="service-card ">
+                        <div class="d-flex flex-column justify-content-between flex-grow: 1" >
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <a href="#" class="btn-custom" style="border: 1px solid white !important; width:fit-content";>${item.buttonText}</a>
+                        </div>
+                        <div class="image-container" style="width: 200px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 10px auto; overflow: hidden;">
+                              <img src="${item.cardImages}" alt="${item.title}" class="card-image" 
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                  </div>
+                `;
+            });
+
+            carouselItem += `</div></div>`;
+            carouselContent.innerHTML += carouselItem;
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #2b0f49, #1a0733);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            min-height: 450px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #B8B8B8;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .btn-custom {
+            border: 1px solid white !important;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .btn-custom:hover {
+            opacity: 0.9;
+            color: white;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Responsive behavior */
+        @media (max-width: 768px) {
+            .carousel-item .row {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .service-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .carousel-item .row {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-right">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                        data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" id="carouselContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script>
+        const carouselData = [
+            {
+                title: "UI/UX Design",
+                description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                buttonText: "Learn More",
+                cardImages: "/techificent/images/card1.png"
+            },
+            {
+                title: "Software Development",
+                description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                buttonText: "Learn More",
+                cardImages: "/techificent/images/card2.png"
+            },
+            {
+                title: "Business Consulting",
+                description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                buttonText: "Learn More",
+                cardImages: "/techificent/images/card3.png"
+            },
+            {
+                title: "Digital Marketing",
+                description: "Helping brands grow online through SEO, content marketing, and social media strategies.",
+                buttonText: "Learn More",
+                cardImages: "/techificent/images/card4.png"
+            }
+        ];
+
+        function generateCarouselItems() {
+            const carouselContent = document.getElementById("carouselContent");
+            carouselContent.innerHTML = "";
+
+            const screenWidth = window.innerWidth;
+            const cardsPerSlide = screenWidth < 769 ? 1 : 3; // 1 card for small screens, 3 for larger screens
+
+            for (let i = 0; i < carouselData.length; i += cardsPerSlide) {
+                const isActive = i === 0 ? "active" : "";
+                let carouselItem = `<div class="carousel-item ${isActive}">
+                    <div class="row justify-content-center" style="gap: 10px; margin: 10px 0;">
+                `;
+
+                for (let j = i; j < i + cardsPerSlide && j < carouselData.length; j++) {
+                    const item = carouselData[j];
+                    carouselItem += `
+                        <div class="service-card">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <a href="#" class="btn-custom">${item.buttonText}</a>
+                            <div class="image-container" style="width: 200px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 10px auto; overflow: hidden;">
+                                <img src="${item.cardImages}" alt="${item.title}" class="card-image" 
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                }
+
+                carouselItem += `</div></div>`;
+                carouselContent.innerHTML += carouselItem;
+            }
+        }
+
+        generateCarouselItems();
+
+        // Regenerate carousel items on window resize
+        window.addEventListener("resize", generateCarouselItems);
+    </script>
+</body>
+
+</html>
+
+
+    <!-- cards  -->
+   <!-- <section class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                    </div>
+                    <div class="col-2 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                            data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" id="carouselContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script type="text/javascript"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    
+        <script>
+            const carouselData = [
+                [
+                    {
+                        title: "UI/UX Design",
+                        description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                        buttonText: "Learn More",
+                        cardImages: "https://dev.techificent.com/wp-content/uploads/2025/02/card1.png"
+    
+                    },
+                    {
+                        title: "Software Development",
+                        description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                        buttonText: "Learn More",
+                       cardImages: "https://dev.techificent.com/wp-content/uploads/2025/02/card2.png"
+    
+                    },
+                    {
+                        title: "Business Consulting",
+                        description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                        buttonText: "Learn More",
+                       cardImages: "https://dev.techificent.com/wp-content/uploads/2025/02/card3.png"
+    
+                    }
+                ],
+
+            ];
+    
+            const carouselContent = document.getElementById("carouselContent");
+    
+            carouselData.forEach((group, index) => {
+                const isActive = index === 0 ? "active" : "";
+                let carouselItem = `<div class="carousel-item ${isActive}">
+        <div class="row" style="gap: 10px; margin-left: 0px; margin-right: 0px; margin-top: 10px;">
+    `;
+    
+                group.forEach(item => {
+                    carouselItem += `
+                       <div class="service-card ">
+                            <div class="d-flex flex-column justify-content-between flex-grow: 1" >
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                                <a href="#" class="btn-custom" style="border: 1px solid white !important; width:fit-content";>${item.buttonText}</a>
+                            </div>
+                            <div class="image-container" style="width: 200px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 10px auto; overflow: hidden;">
+                                  <img src="${item.cardImages}" alt="${item.title}" class="card-image" 
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                      </div>
+                    `;
+                });
+    
+                carouselItem += `</div></div>`;
+                carouselContent.innerHTML += carouselItem;
+            });
+        </script> -->

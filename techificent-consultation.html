@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Author -->
+    <meta name="author" content="Themesindustry">
+    <!-- description -->
+    <meta name="description" content="">
+    <!-- keywords -->
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>Consultation</title>
+    <!-- Favicon -->
+    <link href="#" rel="icon">
+    <!-- Bundle -->
+    <link href="techificent/vendor/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Plugin Css -->
+    <link href="techificent/vendor/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="techificent/vendor/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="techificent/vendor/css/LineIcons.min.css" rel="stylesheet">
+    <link href="techificent/vendor/css/swiper.min.css" rel="stylesheet">
+    <link href="techificent/css/line-awesome.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.css'>
+
+    <link href="techificent/css/fonts.css" rel="stylesheet">
+    <link href="techificent/css/style.css" rel="stylesheet">
+    <link href="techificent/css/menu.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="techificent/css/portfolio.css" id='homecss-css' media='all'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* cards  */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            /* width: 1200px; */
+            margin: 0 auto;
+        }
+
+
+        .service-card {
+            background: linear-gradient(145deg, #2b0f49, #1a0733);
+            border-radius: 20px;
+            padding: 30px;
+            width: 350px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #B8B8B8;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .btn-custom {
+            border: 1px solid white !important;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .btn-custom:hover {
+            opacity: 0.9;
+            color: white;
+        }
+
+
+        /* testimonial */
+        .testimonial-section {
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .testimonial-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .case-study-card {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .case-study-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .case-study-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            color: white;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+
+        .nav-arrows {
+            /* position: absolute; */
+            /* bottom: 20px; */
+            left: 20px;
+        }
+
+        .nav-arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* faq section css */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .question-card {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .consultation-btn {
+            background-color: #6610f2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .consultation-btn:hover {
+            background-color: #520dc2;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #212529;
+        }
+
+        .answer {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .faq-content {
+            padding-top: 0;
+        }
+
+
+
+        .bg-purple {
+            width: 100% !important;
+            border-radius: 0px !important;
+        }
+
+        /* button  */
+
+        .banner-area a {
+            text-transform: capitalize;
+            font-size: 16px;
+            color: #FFFFFF;
+            position: relative;
+            line-height: 24px;
+            display: inline-block;
+            font-family: 'Aeonik-Regular';
+            padding: 12px 28px;
+            background-color: #5407B9;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+
+        .banner-area a:hover {
+            background-color: #FFFFFF;
+            color: #1D0044;
+        }
+
+
+        /* Add these styles to your existing style section */
+        #testimonialCarousel .carousel-item {
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            /* Adjust this height as needed */
+            position: relative;
+        }
+
+        .testimonial-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            z-index: 15;
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .carousel-indicators li {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 8px;
+            height: 8px;
+            margin-right: 10px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-clip: padding-box;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: white;
+        }
+
+        .carousel-item {
+            transition: transform .6s ease-in-out;
+        }
+
+        #testimonialCarousel {
+            position: relative;
+            /* Ensure absolute children are positioned relative to this container */
+        }
+
+        .testimonial-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* z-index: 1; */
+        }
+
+        .nav-arrows {
+            /* position: absolute; */
+            /* bottom: 20px; */
+            /* Position at the bottom */
+            /* left: 10%; */
+            /* Position at the left */
+            z-index: 1000;
+            /* Make sure they are on top */
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-arrow {
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            transform: scale(1.1);
+            /* background-color: rgba(0, 0, 0, 0.8); */
+        }
+
+
+
+        /* header media query
+ */
+
+        /* @media screen and (max-width: 768px) {
+            .all-data {
+                margin-left: 40px;
+                margin-right: 40px;
+
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .all-data {
+                margin-left: 25px;
+                margin-right: 25px;
+
+            }
+
+            .btn-small-screen {
+
+                margin-top: 10px;
+            }
+        } */
+        /* .carousel-item {
+            display: flex !important;
+            justify-content: center;
+            gap: 20px;
+        } */
+
+        @media (max-width: 768px) {
+            .carousel-item .row {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .service-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .carousel-item .row {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body data-offset="90" data-spy="scroll" data-target=".navbar">
+
+    <body>
+
+        <!-- START HEADER NAVIGATION -->
+
+        <!-- <section class="banner-sec bg-purple" id="banner">
+            <div class="banner_overlay"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="banner-area " style="text-align: left;">
+                            <h1>Worried your product lacks user appeal?</h1>
+                        </div>
+
+                        <div class="banner-area" style="text-align: left;">
+
+
+                            <p>Many non-technical directors struggle with choosing the right tech stack, understanding
+                                of UI/UX, and effectively tracking KPIs. Whether you’re just starting development or
+                                already on your way,
+                                we’re the experts who can guide you through every step.</p>
+
+                            <a href="#" class="btn-white">Start Free Consultation</a>
+                            <a href="#" class="btn-white" style="margin-top: 10px;">View Case Studies</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+        <section class="banner-sec bg-purple" id="banner">
+            <div class="banner_overlay"></div>
+            <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" id="carousel-content"></div>
+
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            const bannerData = [
+                {
+                    id: 1,
+                    title: "Worried your product lacks user appeal?",
+                    description: "Many non-technical directors struggle with choosing the right tech stack, understanding UI/UX, and effectively tracking KPIs. Whether you’re just starting development or already on your way, we’re the experts who can guide you through every step.",
+                    btn1: "Start Free Consultation",
+                    btn2: "View Case Studies"
+
+                },
+
+
+            ];
+
+            const carouselContainer = document.getElementById("carousel-content");
+
+            carouselContainer.innerHTML = bannerData
+                .map((item, index) => `
+                    <div class="carousel-item ${index === 0 ? "active" : ""}">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-8 all-data">
+                                    <div class="banner-area" style="text-align: left;">
+                                        <h1>${item.title}</h1>
+                                    </div>
+                                    <div class="banner-area" style="text-align: left;">
+                                        <p>${item.description}</p>
+                                        <div>
+                                            <a href="#" class="btn btn-white">${item.btn1}</a>
+                                            <a href="#" class="btn btn-white btn-small-screen">${item.btn2}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `)
+                .join("");
+
+            document.addEventListener("DOMContentLoaded", function () {
+                $('#bannerCarousel').carousel({
+                    interval: 5000,
+                    
+                });
+            });
+        </script>
+
+        <!-- logo slider -->
+        <section class="marquee-sec py-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <div class="marquee_area d-flex justify-content-center align-items-center mb-3">
+                            <p>Trusted by organizations</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12">
+                        <div id="marquee">
+                            <div class="container-fluid">
+                                <div class="pic-container">
+
+                                    <div class="pic">
+                                        <img src="techificent/images/Amazon.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Disney.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Hulu.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Lidl.png" alt="img">
+                                    </div>
+                                    <!-- Duplicate the images for a seamless loop -->
+                                    <div class="pic">
+                                        <img src="techificent/images/Amazon.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Disney.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Hulu.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Lidl.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/Netflix.png" alt="img">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="techificent/images/WB.png" alt="img">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marquee-gradient is-right"></div>
+                        <div class="marquee-gradient"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="marquee-sec py-5">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div id="marquee">
+                            <div class="container-fluid">
+                                <h2 class="font-weight-bold">Struggling to choose the right tech stack for your product?
+                                    </2>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="marquee">
+                            <div class="container-fluid">
+                                <p>Selecting the right technology stack is crucial to your product’s success. With so
+                                    many options available, it can be overwhelming to decide which tools, frameworks,
+                                    and platforms best align with your product goals and future scalability. Our team
+                                    helps you assess your project’s unique needs and guides you in choosing a tech stack
+                                    that ensures efficiency, reliability, and long-term growth.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="marquee-sec py-5">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div id="marquee">
+                            <div
+                                class="container-fluid heading-area d-flex flex-column justify-content-center align-items-center text-center">
+                                <h2 class="subheading">Our Services</h2>
+                                <h3>Empowering your business with tailored digital solutions</h3>
+                                <p>
+                                    Our expert team delivers comprehensive services to elevate your digital presence and
+                                    streamline your business operations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                            data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" id="carouselContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script type="text/javascript"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    
+        <script>
+            const carouselData = [
+                {
+                    title: "UI/UX Design",
+                    description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card1.png"
+                },
+                {
+                    title: "Software Development",
+                    description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card2.png"
+                },
+                {
+                    title: "Business Consulting",
+                    description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card3.png"
+                },
+               
+            ];
+    
+            function generateCarouselItems() {
+                const carouselContent = document.getElementById("carouselContent");
+                carouselContent.innerHTML = "";
+    
+                const screenWidth = window.innerWidth;
+                const cardsPerSlide = screenWidth < 769 ? 1 : 3; // 1 card for small screens, 3 for larger screens
+    
+                for (let i = 0; i < carouselData.length; i += cardsPerSlide) {
+                    const isActive = i === 0 ? "active" : "";
+                    let carouselItem = `<div class="carousel-item ${isActive}">
+                        <div class="row justify-content-center" style="gap: 10px; margin: 10px 0;">
+                    `;
+    
+                    for (let j = i; j < i + cardsPerSlide && j < carouselData.length; j++) {
+                        const item = carouselData[j];
+                        carouselItem += `
+                            <div class="service-card">
+                                <div>
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                                <a href="#" class="btn-custom">${item.buttonText}</a>
+                                </div>
+                                <div class="image-container" style="width: 200px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 10px auto; overflow: hidden;">
+                                    <img src="${item.cardImages}" alt="${item.title}" class="card-image" 
+                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                        `;
+                    }
+    
+                    carouselItem += `</div></div>`;
+                    carouselContent.innerHTML += carouselItem;
+                }
+            }
+    
+            generateCarouselItems();
+    
+            // Regenerate carousel items on window resize
+            window.addEventListener("resize", generateCarouselItems);
+        </script>
+
+        <!-- cards  -->
+        <!-- <div id="card" class="card-container"></div> -->
+
+
+
+        <script>
+            const cardData = [
+                {
+                    title: "UI/UX Design",
+                    description: "Designing user-focused experiences that seamlessly balance functionality and aesthetics.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card3.png"
+
+                },
+                {
+                    title: "Software Development",
+                    description: "Building versatile software solutions to drive your business, from web platforms to mobile apps.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card2.png"
+
+
+                },
+                {
+                    title: "Business Consulting",
+                    description: "Providing expert advice to help optimize your operations and achieve business goals.",
+                    buttonText: "Learn More",
+                    cardImages: "/techificent/images/card3.png"
+
+
+                },
+                
+            ];
+
+            function renderCards() {
+                const cardContainer = document.getElementById('card');
+                cardContainer.innerHTML = cardData.map(card => `
+                    <div class="service-card ">
+                        <div class="d-flex flex-column justify-content-between flex-grow: 1" >
+                            <h3>${card.title}</h3>
+                            <p>${card.description}</p>
+                            <a href="#" class="btn-custom" style="border: 1px solid white !important; width:fit-content";>${card.buttonText}</a>
+                        </div>
+                        <div class="image-container" style="width: 200px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 10px auto; overflow: hidden;">
+                              <img src="${card.cardImages}" alt="${card.title}" class="card-image" 
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                  </div>
+                `).join('');
+            }
+            renderCards();
+        </script>
+
+       
+
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" id="testimonialContainer"></div>
+
+                <!-- Carousel Indicators -->
+                <ol class="carousel-indicators" id="testimonialIndicators"></ol>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const testimonials = [
+                    {
+                        backgroundImage: "/techificent/images/testimonials.png",
+                        quote: "No other platform combines the power, flexibility, reach, and network effects.",
+                        author: "Lenny Rachitsky, GP",
+                    }
+
+                ];
+
+                const testimonialContainer = document.getElementById("testimonialContainer");
+                const testimonialIndicators = document.getElementById("testimonialIndicators");
+
+                testimonials.forEach((testimonial, index) => {
+                    const activeClass = index === 0 ? "active" : "";
+
+                    const item = `
+         <div class="carousel-item ${activeClass}" style="background-image: url('${testimonial.backgroundImage}'); background-size: cover;  height: 650px; width: 100%;">
+             <div class="testimonial-overlay"></div>
+             
+                 <div class="row d-flex flex-column justify-content-between p-5 h-100">
+                    <div class="col-md-8 d-flex flex-column justify-content-around">
+                         <small class="">Testimonials</small>
+                         <div>
+                         <h2 class="display-6 mt-2 mb-4">"${testimonial.quote}"</h2>
+                         <p class="mb-0">${testimonial.author}</p>
+                         </div>
+                     </div>
+                    <div class="nav-arrows">
+                         <span class="nav-arrow prev-arrow" data-target="#testimonialCarousel" data-slide="prev">
+                              <i class="bi bi-chevron-left"></i> <!-- Left Arrow -->
+                         </span>
+                         <span class="nav-arrow next-arrow" data-target="#testimonialCarousel" data-slide="next">
+                             <i class="bi bi-chevron-right"></i> <!-- Right Arrow -->
+                        </span>
+                    </div>
+               
+                </div>
+         </div>
+
+        `;
+
+                    const indicator = `<li data-target="#testimonialCarousel" data-slide-to="${index}" class="${activeClass}"></li>`;
+
+                    testimonialContainer.innerHTML += item;
+                    testimonialIndicators.innerHTML += indicator;
+                });
+
+                $(document).ready(function () {
+                    $("#testimonialCarousel").carousel({
+                        interval: 5000,
+                        pause: "hover",
+                    });
+
+                    $(".prev-arrow").click(function () {
+                        $("#testimonialCarousel").carousel("prev");
+                    });
+
+                    $(".next-arrow").click(function () {
+                        $("#testimonialCarousel").carousel("next");
+                    });
+                });
+            });
+        </script>
+
+
+        <!-- case study -->
+        <section class="py-5">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-8 heading-area">
+                        <h2 class="text-uppercase">Case Studies</h2>
+                        <h3 class="display-8 mb-4">
+                            Productive discussions always lead towards more clarity and untapped solutions
+                        </h3>
+                        <p class="text-muted mb-5">
+                            Sometimes, all it takes is a conversation with a teddy bear to uncover the perfect
+                            solution—and how beautiful it would be if the teddy bear already knew the solution. Our case
+                            studies show how this simple yet effective method has led to innovative outcomes in tech and
+                            product consulting.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4" style="margin-top: 20px !important;">
+                    <!-- First Case Study -->
+                    <div class="col-md-8">
+                        <div class="case-study-card"
+                            style="background-image: url('/techificent/images/case-study1.png');">
+                            <small class="case-study-logo" style="color: white;">Logo</small>
+                            <!-- Logo moved to the top-left -->
+                            <div class="case-study-content">
+                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                <button class="btn btn-light mt-3"
+                                    style=" border: none !important; border-radius: 5px !important;">View Case
+                                    Study</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Case Study -->
+                    <div class="col-md-4">
+                        <div class="case-study-card" style="background: #F5F5F5;">
+                            <image src="/techificent/images/Amazon.png" alt="Case Study 2">
+                                <div class="case-study-content">
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                    <button class="btn btn-light  mt-3"
+                                        style="background: black; color: white; border: none !important; border-radius: 5px !important;">View
+                                        Case Study</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- faq section -->
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col-md-5 heading-area">
+                        <h2 class="text-uppercase text-muted" style="margin-bottom: 30px;">Frequently Asked Questions
+                        </h2>
+                        <h3 class="h3 mb-4">All of your questions answered right here!</h3>
+                        <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
+                            fermentum erat, non bibendum elit. Suspendisse cursus elit vitae malesuada vehicula.</p>
+                        <button class="consultation-btn">Start Free Consultation</button>
+                    </div>
+
+                    <div class="col-md-7">
+                        <div id="faq" class="faq-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const faqData = [
+                {
+                    question: "Why Choose us for consultation?",
+                    answer: "Because we have worked on tons of projects and every project gives new experience. There is a bright chance that we already faced the issue you are facing or may be we already helped someone on it."
+                },
+                {
+                    question: "What will be the medium to conduct this session?",
+                    answer: "This will be a google meet call"
+                },
+                {
+                    question: "What if discussion prolong than the designated time?",
+                    answer: "Time is the most precious thing so we try our best to keep this time productive but if still it crosses the time then we can offer 5 to 10 mins as grace time but after that next slot will be charged."
+                },
+                {
+                    question: "What if the call is not productive?",
+                    answer: "You will get free credits"
+                }
+            ];
+
+            function renderFAQ() {
+                const faqContainer = document.getElementById('faq');
+                faqContainer.innerHTML = faqData.map((faq) => `
+            <div class="question-card">
+                <h3 class="question-title font-weight-bold">${faq.question}</h3>
+                <p class="answer">${faq.answer}</p>
+            </div>
+        `).join('');
+            }
+
+            renderFAQ();
+
+
+            
+        </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
+        <!-- JavaScript -->
+        <script src="techificent/vendor/js/bootstrap.min.js"></script>
+        <!-- Plugin Js -->
+        <script src="techificent/vendor/js/appear.js"></script>
+        <script src="techificent/vendor/js/jquery.fancybox.min.js"></script>
+        <script src="techificent/vendor/js/owl.carousel.min.js"></script>
+        <script src="techificent/vendor/js/swiper.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.js'></script>
+        <script src="techificent/js/bullets.js"></script>
+        <!-- custom script -->
+        <script src="techificent/vendor/js/contact_us.js"></script>
+        <script src="techificent/js/main.js"></script>
+    </body>
+
+</html>
